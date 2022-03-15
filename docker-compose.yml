@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    environment:
+      BIND-ADDRESS: 0.0.0.0
+    ports:
+      - 8080:8080
+    volumes:
+      - ./api:/api
+    links:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    build: ./docker/database/
+    hostname: mysql
+    platform: linux/amd64
+    environment:
+      BIND-ADDRESS: 0.0.0.0
+    ports:
+      - 3306:3306
