@@ -1,25 +1,17 @@
 version: "3.8"
 services:
-  api:
-    container_name: api
-    build:
-      context: .
-      dockerfile: ./api/Dockerfile
-    environment:
-      BIND-ADDRESS: 0.0.0.0
+  app:
+    build: ./docker/app
     ports:
       - 8080:8080
     volumes:
-      - ./api:/api
-    links:
-      - mysql
+      - ./app:/app
+    command: /bin/sh -c "tail -f /dev/null"
+    depends_on:
+      - db
 
-  mysql:
-    container_name: mysql
+  db:
     build: ./docker/database/
-    hostname: mysql
     platform: linux/amd64
-    environment:
-      BIND-ADDRESS: 0.0.0.0
     ports:
       - 3306:3306
