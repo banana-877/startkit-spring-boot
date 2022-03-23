@@ -53,6 +53,37 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.28</version>
 		</dependency>
+
+
+
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>6.0.0.Alpha9</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
+		<dependency>
+		    <groupId>org.xerial</groupId>
+		    <artifactId>sqlite-jdbc</artifactId>
+		    <version>3.20.1</version>
+		    <scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.zsoltfabok/sqlite-dialect -->
+		<dependency>
+		    <groupId>com.zsoltfabok</groupId>
+		    <artifactId>sqlite-dialect</artifactId>
+		    <version>1.0</version>
+		</dependency>
+
+
+
+		<dependency>
+    		<groupId>org.xerial</groupId>
+    		<artifactId>sqlite-jdbc</artifactId>
+    		<version>3.36.0.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -60,6 +91,24 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+    			<groupId>org.flywaydb</groupId>
+    			<artifactId>flyway-maven-plugin</artifactId>
+    			<version>8.5.4</version>
+				<configuration>
+        			<user>myUser</user>
+        			<password>mySecretPwd</password>
+        			<schemas>
+        			    <schema>schema1</schema>
+        			    <schema>schema2</schema>
+        			    <schema>schema3</schema>
+        			</schemas>
+        			<placeholders>
+        			    <keyABC>valueXYZ</keyABC>
+        			    <otherplaceholder>value123</otherplaceholder>
+        			</placeholders>
+    			</configuration>
 			</plugin>
 		</plugins>
 	</build>
