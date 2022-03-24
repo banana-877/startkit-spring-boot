@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 /**
  * ログインユーザのユーザ名、パスワードを格納するためのEntity
- * @author aoi
+ * @author maeda@banana
  *
  */
 @Entity

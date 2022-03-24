@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 /**
  * Spring Securityのユーザ検索用のサービスの実装クラス
  * DataSourceの引数として指定することで認証にDBを利用できるようになる
- * @author aoi
+ * @author maeda@banana
  *
  */
 @Service

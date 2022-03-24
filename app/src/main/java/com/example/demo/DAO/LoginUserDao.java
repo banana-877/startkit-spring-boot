@@ -2,19 +2,16 @@ package com.example.demo.DAO;
 
 import java.util.Map;
 
-import javax.persistence.EntityManager;
-
 import com.example.demo.model.LoginUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
 
 /**
  * DBへのアクセスメソッドを呼び出すDao
- * @author aoi
+ * @author maeda@banana
  *
  */
 @Repository
