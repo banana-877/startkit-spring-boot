@@ -122,19 +122,11 @@
     			<groupId>org.flywaydb</groupId>
     			<artifactId>flyway-maven-plugin</artifactId>
     			<version>8.5.4</version>
-				<!-- <configuration>
-        			<user>myUser</user>
-        			<password>mySecretPwd</password>
-        			<schemas>
-        			    <schema>schema1</schema>
-        			    <schema>schema2</schema>
-        			    <schema>schema3</schema>
-        			</schemas>
-        			<placeholders>
-        			    <keyABC>valueXYZ</keyABC>
-        			    <otherplaceholder>value123</otherplaceholder>
-        			</placeholders>
-    			</configuration> -->
+				<configuration>
+                	<url>jdbc:sqlite:./src/main/resources/demo.sqlite</url>
+                	<user>root</user>
+                	<password></password>
+             	</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -3,11 +3,16 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <title>Hello World!</title>
+        <link th:href="@{/css/demo.css}" rel="styleSheet">
     </head>
     <body>
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+        <div class="absolute_parent"></div>
+            <img th:src="@{images/hello_banana.png}" class="topimage">
+            <form th:action="@{/logout}" method="post" class="box">
+	            <p th:text="|Hello ${userName} !!!|"></p>
+                
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
     </body>
 </html>
