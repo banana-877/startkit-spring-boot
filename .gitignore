@@ -1,3 +1,2 @@
 .vscode/*
-app/target/*.jar
-app/target/*.original
+app/target
