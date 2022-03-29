@@ -3,7 +3,7 @@ package com.banana.demo;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.banana.demo.DAO.LoginUserDao;
+import com.banana.demo.dao.LoginUserDao;
 import com.banana.demo.model.LoginUser;
 
 import org.springframework.beans.factory.annotation.Autowired;

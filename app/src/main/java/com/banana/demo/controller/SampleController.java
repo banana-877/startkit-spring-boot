@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-import com.banana.demo.DAO.SampleService;
+import com.banana.demo.dao.SampleService;
 import com.banana.demo.model.UserModel;
 
 @SpringBootApplication

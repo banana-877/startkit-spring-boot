@@ -1,4 +1,4 @@
-package com.banana.demo.DAO;
+package com.banana.demo.dao;
 
 import java.util.Map;
 
