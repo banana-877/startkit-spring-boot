@@ -39,9 +39,9 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		
-		LoginUserModel user = userDao.findUser(userName);
+		LoginUserModel loginuser = userDao.findUser(userName);
 		
-		if (user == null) {
+		if (loginuser == null) {
 			throw new UsernameNotFoundException("User" + userName + "was not found in the database");
 		}
 		//権限のリスト
@@ -55,7 +55,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
 		//UserDetailsはインタフェースなのでUserクラスのコンストラクタで生成したユーザオブジェクトを
-		UserDetails userDetails = (UserDetails)new User(user.getUserName(), encoder.encode(user.getPassword()),grantList);
+		UserDetails userDetails = (UserDetails)new User(loginuser.getUserName(), encoder.encode(loginuser.getPassword()),grantList);
 		
 		return userDetails;
 	}
