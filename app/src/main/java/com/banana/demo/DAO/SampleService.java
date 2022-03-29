@@ -1,4 +1,4 @@
-package com.example.demo.DAO;
+package com.banana.demo.DAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import com.example.demo.model.UserModel;
+import com.banana.demo.model.UserModel;
 
 @Service
 public class SampleService {

@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.banana.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-import com.example.demo.DAO.SampleService;
-import com.example.demo.model.UserModel;
+import com.banana.demo.DAO.SampleService;
+import com.banana.demo.model.UserModel;
 
 @SpringBootApplication
 // @RestController

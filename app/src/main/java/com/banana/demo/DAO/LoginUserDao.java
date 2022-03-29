@@ -1,8 +1,8 @@
-package com.example.demo.DAO;
+package com.banana.demo.DAO;
 
 import java.util.Map;
 
-import com.example.demo.model.LoginUser;
+import com.banana.demo.model.LoginUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

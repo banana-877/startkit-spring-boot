@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.banana.demo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.demo.DAO.LoginUserDao;
-import com.example.demo.model.LoginUser;
+import com.banana.demo.DAO.LoginUserDao;
+import com.banana.demo.model.LoginUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
