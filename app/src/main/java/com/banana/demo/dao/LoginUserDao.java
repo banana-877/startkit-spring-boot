@@ -2,7 +2,7 @@ package com.banana.demo.dao;
 
 import java.util.Map;
 
-import com.banana.demo.model.LoginUser;
+import com.banana.demo.model.LoginUserModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -25,7 +25,7 @@ public class LoginUserDao {
 	 * @param userName
 	 * @return 一致するユーザが存在するとき:UserEntity、存在しないとき:Null
 	 */
-	public LoginUser findUser(String userName) {
+	public LoginUserModel findUser(String userName) {
 		String sql = ""
 		 + "SELECT * "
 		 + "FROM user "
@@ -33,7 +33,7 @@ public class LoginUserDao {
 
         Map<String, Object> data = jdbcTemplate.queryForMap(sql, userName);
  
-        LoginUser user = new LoginUser(
+        LoginUserModel user = new LoginUserModel(
                 (Integer) data.get("user_id")
                 ,(String) data.get("user_name")
                 ,(String) data.get("password")

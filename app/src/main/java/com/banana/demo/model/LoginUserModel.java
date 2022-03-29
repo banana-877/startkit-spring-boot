@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "user")
-public class LoginUser {
+public class LoginUserModel {
 	
 	@Column(name = "user_id")
 	@Id
@@ -40,7 +40,7 @@ public class LoginUser {
 		this.password = password;
 	}
 	
-	public LoginUser(Integer userId, String userName, String password) {
+	public LoginUserModel(Integer userId, String userName, String password) {
 		this.userId = userId;
 		this.userName = userName;
 		this.password = password;

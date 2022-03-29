@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.banana.demo.dao.LoginUserDao;
-import com.banana.demo.model.LoginUser;
+import com.banana.demo.model.LoginUserModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -39,7 +39,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		
-		LoginUser user = userDao.findUser(userName);
+		LoginUserModel user = userDao.findUser(userName);
 		
 		if (user == null) {
 			throw new UsernameNotFoundException("User" + userName + "was not found in the database");
