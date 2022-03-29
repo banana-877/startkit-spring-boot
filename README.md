@@ -14,14 +14,21 @@ $ docker compose up -d
 ```
 
 ## アクセス確認
-以下のページへアクセスして問題なければ構築成功
+以下のページへアクセスする。
 
 http://localhost:8080/
-
 （http://localhost:8080/login にリダイレクトされ、ログイン画面が表示されること）
 
+Email：user
 
- 終了時は以下のコマンドにて中断
+password：password
+
+アクセス後、上記の情報にてログインする。
+
+HelloWorldのページが表示されれば構築成功となる。
+
+## アプリケーションの終了
+終了時は以下のコマンドにて中断
 
  ```zsh
 $ docker compose down
