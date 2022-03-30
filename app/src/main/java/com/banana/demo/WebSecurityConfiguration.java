@@ -43,7 +43,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
             .formLogin()
                 .loginPage("/login") //ログインページはコントローラを経由しないのでViewNameとの紐付けが必要
                 .loginProcessingUrl("/sign_in") //フォームのSubmitURL、このURLへリクエストが送られると認証処理が実行される
-                .usernameParameter("username") //リクエストパラメータのname属性を明示
+                .usernameParameter("email") //リクエストパラメータのname属性を明示
                 .passwordParameter("password")
                 .successForwardUrl("/hello")
                 .failureUrl("/login?error")

@@ -20,6 +20,9 @@ public class LoginUserModel {
 	
 	@Column(name = "username")
 	private String userName;
+
+	@Column(name = "email")
+	private String email;
 	
 	@Column(name = "password")
 	private String password;
@@ -32,6 +35,14 @@ public class LoginUserModel {
 		this.userName = userName;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -40,9 +51,10 @@ public class LoginUserModel {
 		this.password = password;
 	}
 	
-	public LoginUserModel(Integer userId, String userName, String password) {
+	public LoginUserModel(Integer userId, String userName, String email, String password) {
 		this.userId = userId;
 		this.userName = userName;
+		this.email = email;
 		this.password = password;
 	}
 	

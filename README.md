@@ -19,7 +19,7 @@ $ docker compose up -d
 http://localhost:8080/
 （http://localhost:8080/login にリダイレクトされ、ログイン画面が表示されること）
 
-Email：user
+Email：demo@test.com
 
 password：password
 
