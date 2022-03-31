@@ -6,7 +6,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link th:href="@{/css/demo.css}" rel="styleSheet">
     </head>
-    <body  class="text-center" >
+    <body  class="text-center" th:background="@{images/background.jpeg}">
           <main role="main" class="inner cover">
             <img class="mb-4" th:src="@{images/hello_banana.png}">
             <form th:action="@{/logout}" method="post" class="box">
