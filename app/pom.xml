@@ -116,7 +116,7 @@
     			<artifactId>flyway-maven-plugin</artifactId>
     			<version>8.5.4</version>
 				<configuration>
-                	<url>jdbc:sqlite:./src/main/resources/demo.sqlite</url>
+                	<url>jdbc:sqlite:./demo.sqlite</url>
                 	<user>root</user>
                 	<password></password>
              	</configuration>

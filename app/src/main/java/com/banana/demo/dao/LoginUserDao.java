@@ -34,10 +34,10 @@ public class LoginUserDao {
         Map<String, Object> data = jdbcTemplate.queryForMap(sql, email);
  
         LoginUserModel loginuser = new LoginUserModel(
-                (Integer) data.get("user_id")
-                ,(String) data.get("user_name")
-				,(String) data.get("email")
-                ,(String) data.get("password")
+            (Integer) data.get("user_id")
+            ,(String) data.get("user_name")
+			,(String) data.get("email")
+            ,(String) data.get("password")
          );
  
         return loginuser;
