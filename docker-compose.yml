@@ -8,3 +8,11 @@ services:
       - 8080:8080
     volumes:
       - ./app:/app
+    depends_on:
+      - db
+
+  db:
+    build: ./docker/database/
+    platform: linux/amd64
+    ports:
+      - 3306:3306
