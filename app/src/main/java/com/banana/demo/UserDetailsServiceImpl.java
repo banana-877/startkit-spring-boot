@@ -6,6 +6,7 @@ import java.util.List;
 import com.banana.demo.dao.LoginUserDao;
 import com.banana.demo.model.UserModel;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -13,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -25,12 +27,13 @@ import lombok.RequiredArgsConstructor;
  *
  */
 @RequiredArgsConstructor
-@Service
+// @Service
+@Controller
 public class UserDetailsServiceImpl implements UserDetailsService{
 	
 	//DBからユーザ情報を検索するメソッドを実装したクラス
-	// @Autowired
-	// private LoginUserDao userDao;
+	@Autowired
+	private LoginUserDao userDao;
 
 	/**
 	 * UserDetailsServiceインタフェースの実装メソッド
@@ -41,11 +44,9 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		
-		LoginUserDao userDao = new LoginUserDao();
 
 		UserModel userModel = userDao.findUser(userName);
 
-		// LoginUserModel loginuser = userDao.findUser(userName);
 		
 		if (userModel == null) {
 			throw new UsernameNotFoundException("User" + userName + "was not found in the database");

@@ -12,6 +12,4 @@ public interface UserMapper {
      * Emailカラムで検索するクエリ
      */
     public UserModel findByEmail(String email);
-
-    public String prin = "いんたーふぇーす";
 }

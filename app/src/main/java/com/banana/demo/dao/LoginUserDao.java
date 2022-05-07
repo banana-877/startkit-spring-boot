@@ -17,6 +17,7 @@ public class LoginUserDao{
 	
 	@Autowired
     UserMapper userMapper;
+	
 	/**
 	 * フォームの入力値から該当するユーザを検索 合致するものが無い場合Nullが返される
 	 * @param email
