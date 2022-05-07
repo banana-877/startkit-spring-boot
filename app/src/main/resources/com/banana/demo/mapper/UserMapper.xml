@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespaceには対応するMapperインターフェースの完全修飾クラス名を指定 -->
+<mapper namespace="com.banana.demo.mapper.UserMapper">
+  <!-- MapperインターフェースのfindByEmail関数実行時のSQL
+  parameterTypeには関数の引数の型を指定 -->
+  <select id="findByEmail" resultType="com.banana.demo.model.UserModel">
+    select
+      id as userId,
+      user_name as userName,
+      email,
+      password
+    from user
+    where email = #{email}
+  </select>
+</mapper>

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.banana.demo.dao.LoginUserDao;
-import com.banana.demo.model.LoginUserModel;
+import com.banana.demo.model.UserModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,7 +14,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
 
 
 /**
@@ -23,13 +26,15 @@ import org.springframework.stereotype.Service;
  * @author maeda@banana
  *
  */
-@Service
+@RequiredArgsConstructor
+// @Service
+@Controller
 public class UserDetailsServiceImpl implements UserDetailsService{
 	
 	//DBからユーザ情報を検索するメソッドを実装したクラス
 	@Autowired
 	private LoginUserDao userDao;
-	
+
 	/**
 	 * UserDetailsServiceインタフェースの実装メソッド
 	 * フォームから取得したユーザ名でDBを検索し、合致するものが存在したとき、
@@ -39,9 +44,11 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		
-		LoginUserModel loginuser = userDao.findUser(userName);
+
+		UserModel userModel = userDao.findUser(userName);
+
 		
-		if (loginuser == null) {
+		if (userModel == null) {
 			throw new UsernameNotFoundException("User" + userName + "was not found in the database");
 		}
 		//権限のリスト
@@ -53,9 +60,8 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		
 		//rawDataのパスワードは渡すことができないので、暗号化
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		
 		//UserDetailsはインタフェースなのでUserクラスのコンストラクタで生成したユーザオブジェクトを
-		UserDetails userDetails = (UserDetails)new User(loginuser.getUserName(), encoder.encode(loginuser.getPassword()),grantList);
+		UserDetails userDetails = (UserDetails)new User(userModel.getUserName(), encoder.encode(userModel.getPassword()),grantList);
 		
 		return userDetails;
 	}
