@@ -8,4 +8,9 @@ INSERT INTO user (user_name, email, password) VALUES
     'pompom',
     'pom@pom.purin',
     'purin'
-); 
+),
+(
+    'コンテナ動作確認用',
+    'aaa@aaa.aaa',
+    'aaa'
+);
